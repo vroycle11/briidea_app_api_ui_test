@@ -32,6 +32,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
            
            Text(widget.title),
+           Text(widget.title),
+           Text(widget.title),
+           Text(widget.title),
           ],
         ),
       ),
