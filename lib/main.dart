@@ -1,4 +1,6 @@
-import 'package:briidea_app_api_ui_test/home/home.dart';
+import 'package:briidea_app_api_ui_test/home/home_desktop.dart';
+import 'package:briidea_app_api_ui_test/home/home_layout.dart';
+import 'package:briidea_app_api_ui_test/provider/group_provider.dart';
 import 'package:briidea_app_api_ui_test/provider/message_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,8 +9,8 @@ void main() {
   runApp(
      MultiProvider(
       providers:
-      [ ChangeNotifierProvider<PostDataProvider>(create: (_) => PostDataProvider())
-      ,
+      [ ChangeNotifierProvider<UserDataProvider>(create: (_) => UserDataProvider()),
+      ChangeNotifierProvider<GroupDataProvider>(create: (_) => GroupDataProvider()),
       ],
       child: MyApp(),
     ),
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Briidea Chat App',),
+      home:  const HomeLayout(title: 'Briidea Chat App',),
     );
   }
 }

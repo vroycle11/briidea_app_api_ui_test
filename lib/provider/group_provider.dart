@@ -5,17 +5,17 @@
 
 
 import 'package:briidea_app_api_ui_test/models/group.model.dart';
-import 'package:briidea_app_api_ui_test/screens/1_message_and%20_group.dart';
+import 'package:briidea_app_api_ui_test/screens/message_and_group/message_and%20_group.dart';
 import 'package:flutter/foundation.dart';
 
-class PostDataProvider with ChangeNotifier {
-  Group post = Group();
-  bool loading = false;
+class GroupDataProvider with ChangeNotifier {
+  Group group = Group();
+  bool groupLoading = false;
 
-  getPostData(context) async {
-    loading = true;
-    post = await fetchGroups(context);
-    loading = false;
+  getGroupData(context) async {
+    groupLoading = true;
+    group = await fetchGroups(context);
+    groupLoading = false;
 
     notifyListeners();
   }
